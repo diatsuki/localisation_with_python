@@ -5,7 +5,7 @@ from opencage.geocoder import OpenCageGeocode
 import folium
 
 # trouver le pays du numero
-num = "+228********"
+num = "+221786341742"
 lenum = phonenumbers.parse(num)
 locat = geocoder.description_for_number(lenum, "tg")
 print(locat)
@@ -29,4 +29,5 @@ print("Latitude = ",latit,"\nLongitude = ",longi)
 #Creation de map
 monMap = folium.Map(locat=[latit, longi], zoom_start=12)
 folium.Marker([latit, longi], popup=locat).add_to(monMap)
+
 monMap.save("map.html")
